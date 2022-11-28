@@ -17,18 +17,18 @@ import path from 'path'
 // program.parse()
 // console.log(program.opts())
 
-program.command('mypull <branch>')
-.option('-down','is download repo')
-.action((arg,down)=>{
-    console.log(arg,down)
-    const dir = process.cwd()
-    download('github:Qhappyman/javascript', 'test',function (err) {
-        console.log(err ? 'Error' : 'Success')
-      })
-})
+// program.command('mypull <branch>')
+// .option('-down','is download repo')
+// .action((arg,down)=>{
+//     console.log(arg,down)
+//     const dir = process.cwd()
+//     download('github:Qhappyman/javascript', 'test',function (err) {
+//         console.log(err ? 'Error' : 'Success')
+//       })
+// })
 
-program.parse()
-console.log(program.opts())
+console.log(program.parse(process.argv))
+// console.log(program.opts())
 // program
 //   .name('string-util')
 //   .description('CLI to some JavaScript string utilities')

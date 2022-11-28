@@ -19,11 +19,11 @@ import { program } from 'commander'
 //     console.log(val,val2)
 //     return val+val2
 // }
-//testCommander --company=bytedance
+// testCommander --company=bytedance
 // program.option('-a')
 // .option('-n --name','enter your name')
 // .option('-s, --no-student')
-// .option('-c, --company <value>', 'enter your company','baidu')
+// .option('-c, --company [value]', 'enter your company','baidu')
 // .option('-h, --home [value]', 'enter your home',myparse,1)
 // .option('-m, --mularg [value...]','mul arguments')
 // program.parse()
@@ -31,6 +31,7 @@ import { program } from 'commander'
 
 //command
 function handleAge(age,arg){
+    console.log(age,arg)
     return age -10 - arg
 }
 program
@@ -39,8 +40,7 @@ program
     .option('-s --save','add save to dependence')
     .option('-n, --name <char>', 'enter char')
     .description('this is a command')
-    .action((project,owner,age,option,command)=>{
-        console.log(project,owner,age,option,command)
+    .action((project,owner,age,option)=>{
+        console.log(project,owner,age,option)
 })
-
 program.parse()
